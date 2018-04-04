@@ -1,17 +1,74 @@
+<!DOCTYPE html>
+
 <html>
 
-    <html lang="en">
-        <title>Intranet</title>
+    <head>
+
+        <title>Tic Tac Toe Game</title>
+        <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+
+        <script src="script/logic.js"></script>
+        <link rel="stylesheet" href="style/w3.css">
+
     </head>
 
-    <body onload="document.forms[0].submit()">
+    <body class="w3-blue-grey" onload="startGame()">
 
-        <form action="http://challenge01.root-me.org/web-client/ch22/?action=profile" method="post" enctype="multipart/form-data">
+        <header class="w3-container w3-center w3-teal">
+            <h1>Tic Tac Toe Game</h1>
+        </header>
 
-            <input type="text" name="username" value="Elior">
-            <input type="checkbox" name="status" checked>
-            <button type="submit">Submit</button>
+        <section class="w3-display-container" style="height: 507px">
+            
+            <div class="w3-display-topmiddle w3-center">
+                <p>Now it's <span id="turn"></span> turn!</p>
+            </div>
 
-        </form>
+            <div class="w3-display-middle" style="height: 45%">
+                <table class="w3-center" style="border-collapse: collapse">
+                    <tbody>
+                        <tr>
+                            <td id="c0" onclick="clickCell(0)" style="width:50px; height:50px" class="w3-border-bottom w3-border-right"></td>
+                            <td id="c1" onclick="clickCell(1)" style="width:50px; height:50px" class="w3-border-bottom"></td>
+                            <td id="c2" onclick="clickCell(2)" style="width:50px; height:50px" class="w3-border-bottom w3-border-left"></td>
+                        </tr>
+                        <tr>
+                            <td id="c3" onclick="clickCell(3)" style="width:50px; height:50px" class="w3-border-bottom w3-border-right"></td>
+                            <td id="c4" onclick="clickCell(4)" style="width:50px; height:50px" class="w3-border-bottom"></td>
+                            <td id="c5" onclick="clickCell(5)" style="width:50px; height:50px" class="w3-border-bottom w3-border-left"></td>
+                        </tr>
+                        <tr>
+                            <td id="c6" onclick="clickCell(6)" style="width:50px; height:50px" class="w3-border-right"></td>
+                            <td id="c7" onclick="clickCell(7)" style="width:50px; height:50px"></td>
+                            <td id="c8" onclick="clickCell(8)" style="width:50px; height:50px" class="w3-border-left"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="w3-display-bottommiddle w3-center">
+
+                <p>X's wins: <span id="XWins">0</span></p>
+                <p>O's wins: <span id="OWins">0</span></p>
+
+                <div class="w3-button w3-margin-bottom w3-light-grey" onclick="startGame()">Start a new game!</div>
+            </div>
+
+        </section>
+        
+        <footer class="w3-container w3-center w3-dark-grey">
+            <p>Created By Elior Yifrach</p>
+        </footer>
+
+        <!-- Modal message box -->
+        <div id="modal" class="w3-modal">
+            <div id="modalContainer" style="width:33%">
+                <h2 id="modalHeader"></h2>
+                <p id="modalContent"></p>
+                <div id="modalButtons" class="w3-container"></div>
+            </div>
+        </div>
+
     </body>
+
 </html>
