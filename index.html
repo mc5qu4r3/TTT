@@ -12,51 +12,50 @@
 
     </head>
 
-    <body class="w3-blue-grey" onload="startGame()">
+    <body onload="init()">
 
-        <header class="w3-container w3-center w3-teal">
+        <header id="header" class="w3-container w3-center w3-teal">
             <h1>Tic Tac Toe Game</h1>
         </header>
 
-        <section class="w3-display-container" style="height: 507px">
+        <div id="content" class="w3-cell-row w3-blue-grey">
+
+            <div class="w3-cell w3-cell-middle">
             
-            <div class="w3-display-topmiddle w3-center">
-                <p>Now it's <span id="turn"></span> turn!</p>
-            </div>
+                <div class="w3-container w3-center">
+                    <p>Now it's <span id="turn"></span> turn!</p>
+                </div>
 
-            <div class="w3-display-middle" style="height: 45%">
-                <table class="w3-center" style="border-collapse: collapse">
-                    <tbody>
-                        <tr>
-                            <td id="c0" onclick="clickCell(0)" style="width:50px; height:50px" class="w3-border-bottom w3-border-right"></td>
-                            <td id="c1" onclick="clickCell(1)" style="width:50px; height:50px" class="w3-border-bottom"></td>
-                            <td id="c2" onclick="clickCell(2)" style="width:50px; height:50px" class="w3-border-bottom w3-border-left"></td>
-                        </tr>
-                        <tr>
-                            <td id="c3" onclick="clickCell(3)" style="width:50px; height:50px" class="w3-border-bottom w3-border-right"></td>
-                            <td id="c4" onclick="clickCell(4)" style="width:50px; height:50px" class="w3-border-bottom"></td>
-                            <td id="c5" onclick="clickCell(5)" style="width:50px; height:50px" class="w3-border-bottom w3-border-left"></td>
-                        </tr>
-                        <tr>
-                            <td id="c6" onclick="clickCell(6)" style="width:50px; height:50px" class="w3-border-right"></td>
-                            <td id="c7" onclick="clickCell(7)" style="width:50px; height:50px"></td>
-                            <td id="c8" onclick="clickCell(8)" style="width:50px; height:50px" class="w3-border-left"></td>
-                        </tr>
-                    </tbody>
+                <table class="w3-center" style="margin-left:auto; margin-right:auto; border-collapse: collapse">
+                    <tr>
+                        <td id="c0" onclick="clickCell(0)" style="width:50px; height:50px" class="w3-border-bottom w3-border-right"></td>
+                        <td id="c1" onclick="clickCell(1)" style="width:50px; height:50px" class="w3-border-bottom"></td>
+                        <td id="c2" onclick="clickCell(2)" style="width:50px; height:50px" class="w3-border-bottom w3-border-left"></td>
+                    </tr>
+                    <tr>
+                        <td id="c3" onclick="clickCell(3)" style="width:50px; height:50px" class="w3-border-bottom w3-border-right"></td>
+                        <td id="c4" onclick="clickCell(4)" style="width:50px; height:50px" class="w3-border-bottom"></td>
+                        <td id="c5" onclick="clickCell(5)" style="width:50px; height:50px" class="w3-border-bottom w3-border-left"></td>
+                    </tr>
+                    <tr>
+                        <td id="c6" onclick="clickCell(6)" style="width:50px; height:50px" class="w3-border-right"></td>
+                        <td id="c7" onclick="clickCell(7)" style="width:50px; height:50px"></td>
+                        <td id="c8" onclick="clickCell(8)" style="width:50px; height:50px" class="w3-border-left"></td>
+                    </tr>
                 </table>
+
+                <div class="w3-container w3-center">
+                    <p>X's wins: <span id="XWins">0</span></p>
+                    <p>O's wins: <span id="OWins">0</span></p>
+
+                    <div class="w3-button w3-margin-bottom w3-light-grey" onclick="restartGame()">Start a new game!</div>
+                </div>
+
             </div>
-
-            <div class="w3-display-bottommiddle w3-center">
-
-                <p>X's wins: <span id="XWins">0</span></p>
-                <p>O's wins: <span id="OWins">0</span></p>
-
-                <div class="w3-button w3-margin-bottom w3-light-grey" onclick="startGame()">Start a new game!</div>
-            </div>
-
-        </section>
+            
+        </div>
         
-        <footer class="w3-container w3-center w3-dark-grey">
+        <footer id="footer" class="w3-container w3-center w3-dark-grey">
             <p>Created By Elior Yifrach</p>
         </footer>
 
